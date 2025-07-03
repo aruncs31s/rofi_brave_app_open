@@ -1,0 +1,112 @@
+/* catppuccin.rasi */
+
+/* Catppuccin Mocha palette */
+* {
+    rosewater:    #f5e0dc;
+    flamingo:     #f2cdcd;
+    pink:         #f5c2e7;
+    mauve:        #cba6f7;
+    red:          #f38ba8;
+    maroon:       #eba0ac;
+    peach:        #fab387;
+    yellow:       #f9e2af;
+    green:        #a6e3a1;
+    teal:         #94e2d5;
+    sky:          #89dceb;
+    sapphire:     #74c7ec;
+    blue:         #89b4fa;
+    lavender:     #b4befe;
+
+    text:         #cdd6f4;
+    subtext1:     #bac2de;
+    subtext0:     #a6adc8;
+    overlay2:     #9399b2;
+    overlay1:     #7f849c;
+    overlay0:     #6c7086;
+    surface2:     #585b70;
+    surface1:     #45475a;
+    surface0:     #313244;
+    base:         #1e1e2e;
+    mantle:       #181825;
+    crust:        #11111b;
+
+    font: "Agave Nerd Font 14";
+
+    /* Rofi specific colors */
+    background-color: @base;
+    text-color: @text;
+    border-color: @surface1;
+    selected-background-color: @blue;
+    selected-text-color: @base;
+    urgent-background-color: @red;
+    urgent-text-color: @base;
+    alternate-background-color: @mantle;
+}
+
+window {
+    background-color: @background-color;
+    border:           2px;
+    border-color:     @border-color;
+    padding:          5;
+    width:            30%;
+}
+
+mainbox {
+    background-color: @background-color;
+    children:         [ inputbar, listview ];
+}
+
+inputbar {
+    children:         [ prompt, entry ];
+    background-color: @surface0;
+    padding:          5px;
+    border-radius:    5px;
+}
+
+prompt {
+    background-color: @surface0;
+    text-color:       @blue;
+    padding:          0px 5px 0px 0px;
+}
+
+entry {
+    background-color: @surface0;
+    text-color:       @text-color;
+    padding:          10px;
+}
+
+listview {
+    background-color: @background-color;
+    columns:          1;
+    lines:            10;
+    spacing:          5px;
+    cycle:            true;
+    dynamic:          true;
+    layout:           vertical;
+}
+
+element {
+    background-color: @background-color;
+    text-color:       @text-color;
+    padding:          15px;
+    border-radius:    5px;
+    height:           3em;
+}
+
+element selected {
+    background-color: @background-color;
+    text-color:       @blue;
+    border:           2px;
+    border-color:     @blue;
+    margin:           0px;
+    border-radius:    5px;
+}
+
+element urgent {
+    background-color: @urgent-background-color;
+    text-color:       @urgent-text-color;
+}
+
+element alternate.normal {
+    background-color: @alternate-background-color;
+}
